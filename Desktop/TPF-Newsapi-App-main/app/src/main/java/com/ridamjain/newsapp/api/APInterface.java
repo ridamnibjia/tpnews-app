@@ -1,0 +1,15 @@
+package com.ridamjain.newsapp.api;
+
+import com.ridamjain.newsapp.models.News;
+
+import retrofit2.Call;
+import retrofit2.http.GET;
+import retrofit2.http.Query;
+
+public interface APInterface {
+    @GET("top-headlines")
+    Call<News> getNews(
+            @Query("country") String country,
+            @Query("apiKey") String apiKey
+    );
+}
